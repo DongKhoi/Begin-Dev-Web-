@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Class Fish</h2>
+
+<p id="demo"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<script>
+class Fish {
+  constructor(name,weight,color) {
+    this.fishname=name;
+	this.fishweight=weight;
+	this.fishcolor=color;
+  }
+  present() {
+    return 'My name is ' + this.fishname+ ", weight is "+this.fishweight+", my color is "+"'"+this.fishcolor+"'";
+  }
+}
+class SevenColorFish extends Fish {
+  constructor(name,weight,color, numbercolor) {
+    super(name,weight,color);
+    this.ncolor = numbercolor;
+  }
+  show1() {
+    return this.present() + ' and my number color is ' + this.ncolor;
+  }
+}
+class CatFish extends Fish {
+  constructor(name,weight,color,kilometer,walkswim) {
+    super(name,weight,color);
+    this.km = kilometer;
+    this.ws=walkswim;
+  }
+  show2() {
+    return this.present() + ' and I walked about ' + this.km+" km. Swimming-Style of me is "+this.ws;
+  }
+}
+class FlyingFish extends Fish {
+  constructor(name,weight,color,speedflying,flyswim) {
+    super(name,weight,color);
+    this.speed = speedflying;
+    this.fs=flyswim;
+  }
+  show3() {
+    return this.present() + ' and Flying Speed aproximately ' + this.speed+" km/h. Flying-Style of me is "+this.fs;
+  }
+}
+class Swimmingcase{
+	constructor(casename){
+    this.case=casename;
+    }
+}
+
+myfish1 = new SevenColorFish("John","20 pounds","red,green","2");
+document.getElementById("demo").innerHTML = myfish1.show1();
+myfish2 = new CatFish("Mary","10 pounds","red,yellow","50","Free Style");
+document.getElementById("demo2").innerHTML = myfish2.show2();
+myfish3 = new FlyingFish("Messi","15 pounds","black,yellow","20","Super Speed");
+document.getElementById("demo3").innerHTML = myfish3.show3();
+
+</script>
+
+</body>
+</html>
